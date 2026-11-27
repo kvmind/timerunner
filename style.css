@@ -1,27 +1,91 @@
-:root{--bg:#04090b;--panel:#0a1518;--line:#1d3a40;--accent:#3fd0c9;--signal:#ffb454;--text:#d6e6e6;--dim:#7d9a9c}
+/* The colours of the app's Los Angeles theme (Shared/Theme.swift), and its faces: Futura for titles,
+   a monospaced face for labels, the system face for running text. */
+:root{--bg:#040A0D;--panel:#08141A;--haze:#0E2A31;--line:#1F4048;--accent:#7CE0D3;--signal:#F2A640;--text:#C8E6E0;--dim:#5C8A8B;--bright:#EFFFFB;
+ --mono:ui-monospace,SFMono-Regular,Menlo,"Hiragino Sans","Apple SD Gothic Neo",monospace;
+ --display:Futura,"Avenir Next","Hiragino Sans","Apple SD Gothic Neo",-apple-system,sans-serif}
 *{box-sizing:border-box}
 html{background:var(--bg)}
-body{margin:0;background:radial-gradient(1200px 600px at 50% -10%,#0c2a2e 0,transparent 70%),var(--bg);color:var(--text);
- font:16px/1.65 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px 80px}
-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none;font:600 15px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.28em}
-.brand img{width:34px;height:34px;border-radius:8px}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:var(--dim);text-decoration:none;font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase}
-nav a:hover,nav a.on{color:var(--accent)}
-h1{font:500 30px/1.2 Futura,"Avenir Next",-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;margin:54px 0 8px}
-.meta{color:var(--dim);font:600 11px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;margin-bottom:34px}
-h2{color:var(--accent);font:600 12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;margin:34px 0 8px}
-p{margin:0 0 12px}
+body{margin:0;background:radial-gradient(900px circle at 55% 40%,rgba(14,42,49,.4) 0,transparent 100%) fixed;color:var(--text);
+ font:16px/1.65 -apple-system,BlinkMacSystemFont,"Helvetica Neue","Hiragino Sans","Apple SD Gothic Neo",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+/* The app's backdrop, drawn by bg.js: line work behind everything, then scanlines and a light vignette. */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.bg canvas{position:absolute;left:0;top:0}
+.bg canvas.dial{left:auto;top:auto;right:-61px;bottom:-101px;animation:turn 90s linear infinite}
+.bg::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,transparent 420px,rgba(0,0,0,.13) 1150px),repeating-linear-gradient(to bottom,rgba(0,0,0,.07) 0 1px,transparent 1px 3px)}
+@keyframes turn{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.bg canvas.dial{animation:none}}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px}
+.narrow{max-width:760px}
 a{color:var(--accent)}
-.lead{font-size:19px;color:var(--text);max-width:620px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:34px 0}
-.card{background:var(--panel);border:1px solid var(--line);border-bottom:2px solid var(--accent);padding:16px}
-.card b{display:block;color:var(--text);font:600 12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;margin-bottom:6px}
-.card span{color:var(--dim);font-size:14px;line-height:1.5;display:block}
-.shot{width:100%;border:1px solid var(--line);margin:28px 0 0;display:block}
-.btn{display:inline-block;margin-top:14px;padding:11px 18px;border:1px solid var(--accent);color:var(--accent);text-decoration:none;font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase}
-.btn:hover{background:var(--accent);color:#04090b}
+p{margin:0 0 12px}
+img{max-width:100%}
+
+.langs{display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap;padding:38px 0 0}
+.langs a{color:var(--dim);text-decoration:none;font:600 10px/1 var(--mono);letter-spacing:.14em}
+.langs a:hover,.langs a.on{color:var(--accent)}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;color:var(--bright);text-decoration:none;font:600 15px/1 var(--mono);letter-spacing:.28em}
+.brand img{width:34px;height:34px;border-radius:8px}
+nav.main{display:flex;gap:18px;flex-wrap:wrap}
+nav.main a{color:var(--dim);text-decoration:none;font:600 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase}
+nav.main a:hover,nav.main a.on{color:var(--accent)}
+
+h1{color:var(--bright);font:500 34px/1.2 var(--display);letter-spacing:.16em;text-transform:uppercase;margin:0 0 18px}
+.narrow h1{font-size:30px;margin:54px 0 8px}
+:lang(ja) h1,:lang(ko) h1{letter-spacing:.06em}
+.meta{color:var(--dim);font:600 11px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;margin-bottom:34px}
+h2{color:var(--accent);font:600 12px/1.4 var(--mono);letter-spacing:.18em;text-transform:uppercase;margin:34px 0 8px}
+.lead{font-size:19px;color:var(--text);max-width:640px}
+
+.hero{padding:56px 0 8px;display:flex;justify-content:space-between;align-items:flex-start;gap:32px}
+.hero .meta{margin-bottom:14px;color:var(--signal)}
+.get{display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex:none;max-width:240px;text-align:right}
+.store{display:inline-block;line-height:0}
+.store img{height:48px;width:auto;display:block}
+.req{color:var(--dim);font:600 11px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+
+/* A screenshot in a frame with two lit corners, as the app brackets its blocks. */
+.shot{position:relative;margin:38px 0 0;border:1px solid var(--line);background:var(--panel);line-height:0}
+.shot img{width:100%;height:auto;display:block}
+.shot::before,.shot::after{content:"";position:absolute;width:18px;height:18px;border:1px solid var(--accent);pointer-events:none}
+.shot::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.shot::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.feature{margin-top:56px}
+.feature .row{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px 0 0}
+.no{color:var(--dim);font:600 11px/1.9 var(--mono);letter-spacing:.18em}
+ul.points{list-style:none;margin:0;padding:0;columns:2;column-gap:36px}
+ul.points li{position:relative;padding-left:18px;margin:0 0 8px;break-inside:avoid;font-size:15px;line-height:1.55}
+ul.points li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:var(--accent)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:56px 0 0}
+.card{background:var(--panel);border:1px solid var(--line);border-bottom:2px solid var(--accent);padding:18px}
+.card b{display:block;color:var(--bright);font:600 12px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
+.card ul.points{columns:1}
+.card ul.points li{color:var(--text);font-size:14px}
+
+.plans{margin:64px 0 0}
+.plans h2{margin-top:0}
+.plans .grid{margin-top:18px}
+.plan{border-bottom-color:var(--signal)}
+.price{color:var(--signal);font:500 30px/1.2 var(--display);letter-spacing:.06em}
+.price small{display:block;color:var(--dim);font:600 11px/1.8 var(--mono);letter-spacing:.14em;min-height:20px}
+.plan p{margin:8px 0 0;font-size:14px;line-height:1.5}
+.fine{color:var(--dim);font-size:13px;line-height:1.55;margin:14px 0 0;max-width:760px}
+.plans .fine:first-of-type{color:var(--text);font-size:15px}
+
+.cta{margin:64px 0 0;padding:34px 0 0;border-top:1px solid var(--line);display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+
+.btn{display:inline-block;margin-top:14px;padding:11px 18px;border:1px solid var(--accent);color:var(--accent);text-decoration:none;font:600 12px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase}
+.btn:hover{background:var(--accent);color:var(--bg)}
+.small{margin-top:14px;color:var(--dim);font-size:14px}
 footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:var(--dim);font-size:13px;display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
 footer a{color:var(--dim)}
+
+@media (max-width:640px){
+ h1{font-size:25px;letter-spacing:.1em}
+ .hero{padding-top:36px;flex-direction:column;gap:22px}
+ .get{align-items:flex-start;text-align:left;max-width:none}
+ .feature .row{grid-template-columns:1fr;gap:6px}
+ ul.points{columns:1}
+}

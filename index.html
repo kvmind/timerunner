@@ -4,28 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TimeRunner — time tracker for Mac</title>
-<meta name="description" content="A native time tracker for Mac: timers, focus, reports, invoices and goals, all kept on your Mac.">
+<meta name="description" content="Track billable time from the menu bar, a widget or the app. Focus in rounds, hit your goals, send PDF invoices. Everything stays on your Mac: no account, no cloud.">
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
+<script src="bg.js" defer></script>
 </head>
 <body>
 <div class="wrap">
-<header><a class="brand" href="./"><img src="icon.png" alt="">TIMERUNNER</a><nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav></header>
+<header><a class="brand" href="./"><img src="icon.png" alt="">TIMERUNNER</a><nav class="main"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav></header>
+<section class="hero">
+<div class="pitch">
+<div class="meta">Timer, focus, invoices, goals</div>
 <h1>Time, tracked<br>the way you bill it</h1>
-<div class="meta">A native time tracker for Mac</div>
-<p class="lead">Clients, projects and tasks with hourly rates. A timer in the menu bar and on the desktop. Reports, invoices and goals — all of it on your Mac, with no account and nothing sent anywhere.</p>
-<!--SHOT-->
-<div class="grid">
-<div class="card"><b>Track</b><span>One click in the app, the menu bar or a desktop widget. One timer at a time, or several side by side.</span></div>
-<div class="card"><b>Focus</b><span>An interval timer with profiles, breaks that are not billed, and widgets of its own.</span></div>
-<div class="card"><b>Bill</b><span>PDF invoices from unbilled time, in your business's look, with tax, discount and numbering.</span></div>
-<div class="card"><b>Report</b><span>Sortable reports to Excel, PDF and CSV; analytics by client, project and task.</span></div>
-<div class="card"><b>Plan</b><span>Time and money goals per project, with pace, a plan-against-actual chart and a mark per day.</span></div>
-<div class="card"><b>Private</b><span>No account, no analytics, no network. Daily backups to a folder you choose. Touch ID lock.</span></div>
-<div class="card"><b>AI ready</b><span>An MCP connector lets Claude, ChatGPT, Cursor and others read your time and log it — only if you switch it on.</span></div>
-<div class="card"><b>Yours</b><span>Four themes, sections you can hide, sounds you can mute, a window that shrinks to a corner.</span></div>
+<p class="lead">Track billable time from the menu bar, a widget or the app. Focus in rounds, hit your goals, send PDF invoices. Everything stays on your Mac: no account, no cloud.</p>
 </div>
-
+<div class="get"><a class="store" href="https://apps.apple.com/app/id6834576295"><img src="badges/en.svg" alt="Download on the Mac App Store" width="156" height="40"></a><span class="req">Apple silicon and Intel, macOS 14 or later</span></div>
+</section>
+<figure class="shot"><img src="shots/01-dashboard.webp" alt="EVERY HOUR, ACCOUNTED FOR. Start and pause your tasks from the dashboard, the menu bar or a desktop widget." width="1920" height="1200"></figure>
+<section class="feature"><figure class="shot"><img src="shots/02-project.webp" alt="CLIENTS, PROJECTS, TASKS. Hourly rates per task, income worked out from tracked time." width="1920" height="1200" loading="lazy"></figure><div class="row"><div class="no">02 / 10</div><ul class="points"><li>Clients → projects → tasks → time records, with a rate and a currency per task</li><li>One timer at a time, or several side by side</li></ul></div></section>
+<section class="feature"><figure class="shot"><img src="shots/03-task.webp" alt="EVERY TASK, IN DETAIL. Time, rate, income and every record of a task on one page." width="1920" height="1200" loading="lazy"></figure><div class="row"><div class="no">03 / 10</div><ul class="points"><li>Log time you forgot to track, with a day, a duration and a comment</li><li>Statuses: To do, In progress, Pause, Done</li></ul></div></section>
+<section class="feature"><figure class="shot"><img src="shots/04-focus.webp" alt="FOCUS IN ROUNDS. An interval timer with profiles. Breaks are not billed." width="1920" height="1200" loading="lazy"></figure><div class="row"><div class="no">04 / 10</div><ul class="points"><li>An interval timer in the Pomodoro style: rounds of focus, short breaks, a long one after the last</li><li>Profiles: 25·5, 50·10, 15·3, 52·17 — and your own</li><li>It can run a task's timer and pause it for breaks, so rest is not billed</li><li>Sounds, notifications, a warning before the end, a break screen</li></ul></div></section>
+<section class="feature"><figure class="shot"><img src="shots/05-reports.webp" alt="REPORTS IN ONE CLICK. Sort, filter and export to Excel, PDF or CSV." width="1920" height="1200" loading="lazy"></figure><div class="row"><div class="no">05 / 10</div><ul class="points"><li>A sortable table of every record, with client, project, rate and date filters</li><li>Export to an Excel workbook (.xlsx), PDF or CSV</li></ul></div></section>
+<section class="feature"><figure class="shot"><img src="shots/06-invoice.webp" alt="INVOICES FROM UNBILLED TIME. Your logo, your numbering, tax and discount — as a PDF." width="1920" height="1200" loading="lazy"></figure><div class="row"><div class="no">06 / 10</div><ul class="points"><li>PDF invoices from a client's unbilled time — all of it or a period, a line per task, project or record</li><li>Your logo, colour, payment details, numbering, tax and discount</li><li>Draft → Issued → Paid, with overdue worked out from the due date</li><li>Time on an issued invoice is never billed twice</li></ul></div></section>
+<section class="feature"><figure class="shot"><img src="shots/07-analytics.webp" alt="SEE WHERE THE TIME GOES. By client, project or task, in hours or in income." width="1920" height="1200" loading="lazy"></figure><div class="row"><div class="no">07 / 10</div><ul class="points"><li>Totals for the week, month, quarter, year or all time — by client, project or task, in hours or in income</li></ul></div></section>
+<section class="feature"><figure class="shot"><img src="shots/08-goals.webp" alt="GOALS WITH A PACE. Time and money targets per project, plan against actual." width="1920" height="1200" loading="lazy"></figure><div class="row"><div class="no">08 / 10</div><ul class="points"><li>Time or money targets per project: per day, week or month, or by a date</li><li>Progress, pace, a plan-against-actual chart and a mark for every day</li></ul></div></section>
+<section class="feature"><figure class="shot"><img src="shots/09-themes.webp" alt="MAKE IT YOURS. Four themes, no account, no cloud. Your data stays on your Mac." width="1920" height="1200" loading="lazy"></figure><div class="row"><div class="no">09 / 10</div><ul class="points"><li>Four themes, from teal neon to plain black</li><li>Sections you do not use can be hidden</li><li>The window shrinks to a corner of the screen and stays useful</li></ul></div></section>
+<section class="feature"><figure class="shot"><img src="shots/10-widgets.webp" alt="WIDGETS ON YOUR DESKTOP. Start and pause tasks, run a focus round, watch your day — without opening the app." width="1920" height="1200" loading="lazy"></figure><div class="row"><div class="no">10 / 10</div><ul class="points"><li>One click to start or pause — in the app, in the menu bar, on the desktop</li><li>Three widgets: the timer, your day, your profiles</li></ul></div></section>
+<section class="grid"><div class="card"><b>PRIVATE BY DESIGN</b><ul class="points"><li>No account, no analytics, no advertising, no network access</li><li>Automatic daily backups on your Mac and in a folder you choose</li><li>Optional Touch ID lock</li><li>Any national currency, and the ten largest cryptocurrencies</li></ul></div><div class="card"><b>AI READY</b><ul class="points"><li>A built-in MCP connector lets AI assistants on your Mac read your projects and time and log new records — only if you switch it on, and never edit or delete</li></ul></div></section>
+<section class="cta"><a class="store" href="https://apps.apple.com/app/id6834576295"><img src="badges/en.svg" alt="Download on the Mac App Store" width="156" height="40"></a><span class="req">Timer, focus, invoices, goals</span></section>
 <footer><span>© 2026 Kanstantsin Vaitsakhouski</span><span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a></span></footer>
 </div>
 </body>
